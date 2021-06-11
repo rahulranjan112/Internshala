@@ -11,6 +11,7 @@ class Customer extends CI_Controller {
         }
 		$this->load->model('User_model');
         $this->load->model('Customer_model');
+        $this->load->model('MenuItem_model');
 		$this->load->library('form_validation');
 	}
 
@@ -23,10 +24,13 @@ class Customer extends CI_Controller {
         
         $user = $this->session->userdata('user');
         $customer = $this->Customer_model->get_data_by_id($user['ID']);
+        $menuitems = $this->MenuItem_model->get_menuitems_customer();
+        
         //$data['user'] = $user;
         $data = array(
             'user' => $user,
             'customer' => $customer,
+            'menuitems' => $menuitems,
         );
         $this->load->view('customers/dashboard', $data);
     }

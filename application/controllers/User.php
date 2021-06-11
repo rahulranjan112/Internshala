@@ -19,6 +19,7 @@ class User extends CI_Controller {
         }
 		$this->load->model('User_model');
         $this->load->model('Customer_model');
+		$this->load->model('Restaurant_model');
 		$this->load->library('form_validation');
 	}	
 
@@ -76,13 +77,16 @@ class User extends CI_Controller {
 					$sessArr['ID'] = $user['ID'];
 					$sessArr['Email'] = $user['Email'];
 					$sessArr['IsCustomer'] = $user['IsCustomer'];
-					//$sessArr['Name'] = $this->Customer_model->get_data_by_id($user['ID']);
-					$this->session->set_userdata('user', $sessArr);
+					
 					//echo $this->session->userdata('user')['Email'];
 
 					if($user['IsCustomer']==true){
+						$sessArr['Name'] =  $this->Customer_model->get_data_by_id($user['ID'])['Name'];
+						$this->session->set_userdata('user', $sessArr);
 						redirect( uri: base_url().'index.php/customer/index');
 					} else {
+						$sessArr['Name'] =  $this->Restaurant_model->get_data_by_id($user['ID'])['Name'];					
+						$this->session->set_userdata('user', $sessArr);
 						redirect( uri: base_url().'index.php/restaurant/index');
 					}				
 				} else {

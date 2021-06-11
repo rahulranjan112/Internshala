@@ -12,6 +12,9 @@ class Restaurant extends CI_Controller {
 		$this->load->model('User_model');
         $this->load->model('Restaurant_model');
         $this->load->model('MenuItem_model');
+        $this->load->model('Order_model');
+        $this->load->model('Customer_model');
+        $this->load->model('OrderItems_model');
 		$this->load->library('form_validation');
 	}
 
@@ -33,6 +36,46 @@ class Restaurant extends CI_Controller {
             'menuitems' => $menuitems,
         );
         $this->load->view('restaurants/dashboard', $data);
+    }
+
+    function vieworders($restaurantID) {   
+        //$this->load->model('User_model');
+        if ($this->User_model->authorized() == false) {
+            $this->session->set_flashdata('msg','You are not authorized to access this section');
+            redirect(base_url().'index.php/user/login');
+        }
+        
+        $user = $this->session->userdata('user');
+        $order = $this->Order_model->get_orders_by_restaurantid($restaurantID);
+        
+        //$data['user'] = $user;
+        $data = array(
+            'user' => $user,
+            'orders' => $order,
+        );
+        $this->load->view('restaurants/vieworders', $data);
+    }
+
+    function customerorders($orderid) {   
+        //$this->load->model('User_model');
+        if ($this->User_model->authorized() == false) {
+            $this->session->set_flashdata('msg','You are not authorized to access this section');
+            redirect(base_url().'index.php/user/login');
+        }
+        
+        $user = $this->session->userdata('user');
+        $order = $this->Order_model->get_data_by_id($orderid);
+        $customer = $this->Customer_model->get_data_by_customerid($order['customer_id']);
+        $orderitem = $this->OrderItems_model->get_orderitems_by_orderid($orderid);
+        
+        //$data['user'] = $user;
+        $data = array(
+            'user' => $user,
+            'orders' => $order,
+            'orderitems' => $orderitem,
+            'customer' => $customer,
+        );
+        $this->load->view('restaurants/customerorders', $data);
     }
 
     public function register() {

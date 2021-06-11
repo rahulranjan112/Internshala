@@ -16,9 +16,15 @@ class MenuItem_model extends CI_model{
         $this->db->where('ID', $id);
         $this->db->delete('menuitems');
     }
-    function getRecords()
+    function get_menuitems_customer()
     {
-        return $menuitems = $this->db->get('menuitems')->result_array();
+        $this->db->select('menuitems.*,restaurant.Name');
+        $this->db->from('menuitems');
+        $this->db->join('restaurant', 'menuitems.Restaurant_ID = restaurant.id');
+        $this->db->where('menuitems.ItemAvailable', 1);
+        $query = $this->db->get();
+        return $menuitems = $query->result_array();
+        //return $menuitems = $this->db->get('menuitems')->result_array();
     }
     function get_data_by_id($id='0')
     {
@@ -30,7 +36,11 @@ class MenuItem_model extends CI_model{
         $this->db->where('Restaurant_ID', $id);
         //$this->db->from('menuitems');  
         $query = $this->db->get('menuitems');
-        return $menuitems = $query->result_array();
+        if($query->num_rows() != 0) {            
+            return $menuitems = $query->result_array();
+        } else {
+            return 0;
+        }
     }
 }
 

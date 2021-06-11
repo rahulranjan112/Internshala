@@ -17,7 +17,7 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="col-md-0 text-right text-white">Welcome, <?php echo $restaurant['Name'];//$this->session->userdata('user')['Email'];?> <a href="<?php echo base_url().'index.php/customer/logout';?>" class="nav-item text-white">Logout</a></div>                
+                    <div class="col-md-0 text-right text-white">Welcome, <?php  echo $user['Name'];//$this->session->userdata('user')['Email'];?> <a href="<?php echo base_url().'index.php/customer/logout';?>" class="nav-item text-white">Logout</a></div>                
                 </div>
             </nav>
         </header>    
@@ -25,7 +25,10 @@
             <div class="row">    
                 <div class="col-md-15">
                     <div class="row">    
-                        <div class="col-10"><h3>Menu Items</h3></div>
+                        <div class="col-8"><h3>Menu Items</h3></div>
+                        <div class="col-2 text-right">
+                            <a href="<?php echo base_url().'index.php/restaurant/vieworders/'.$restaurant['ID'];?>" class="btn btn-primary">View Orders</a>
+                        </div>
                         <div class="col-2 text-right">
                             <a href="<?php echo base_url().'index.php/menuitem/create';?>" class="btn btn-primary">Create</a>
                         </div>
