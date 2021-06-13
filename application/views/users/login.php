@@ -28,15 +28,15 @@
             <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
 
             <div class="form-floating">
-            <input type="text" id="email" name="email" class="form-control <?php echo (form_error( field: 'email') != "") ? 'is-invalid' : '';?>" id="floatingInput" placeholder="name@example.com" value="<?php echo set_value('email');?>">
+            <input type="text" id="email" name="email" class="form-control <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>" id="floatingInput" placeholder="name@example.com" value="<?php echo set_value('email');?>">
             <label for="floatingInput">Email address</label>
-            <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'email'));?></p>
+            <p class="invalid-feedback"><?php echo strip_tags(form_error('email'));?></p>
             </div>
 
             <div class="form-floating">
-            <input type="password" id="password" name="password" class="form-control <?php echo (form_error( field: 'password') != "") ? 'is-invalid' : '';?>" id="floatingPassword" placeholder="Password">
+            <input type="password" id="password" name="password" class="form-control <?php echo (form_error('password') != "") ? 'is-invalid' : '';?>" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
-            <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'password'));?></p>
+            <p class="invalid-feedback"><?php echo strip_tags(form_error('password'));?></p>
             </div>    
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>

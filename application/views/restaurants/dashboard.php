@@ -30,7 +30,7 @@
                             <a href="<?php echo base_url().'index.php/restaurant/vieworders/'.$restaurant['ID'];?>" class="btn btn-primary">View Orders</a>
                         </div>
                         <div class="col-2 text-right">
-                            <a href="<?php echo base_url().'index.php/menuitem/create';?>" class="btn btn-primary">Create</a>
+                            <a href="<?php echo base_url().'index.php/MenuItem/create';?>" class="btn btn-primary">Create Menu</a>
                         </div>
                     </div>
                     <hr>
@@ -62,10 +62,10 @@
                             <td><?php echo $menuitem['IsVegetarian']?></td>
                             <td><?php echo $menuitem['Course']?></td>
                             <td>
-                                <a href="<?php echo base_url().'index.php/menuitem/edit/'.$menuitem['ID']?>" class="btn btn-primary">Edit</a>
+                                <a href="<?php echo base_url().'index.php/MenuItem/edit/'.$menuitem['ID']?>" class="btn btn-primary">Edit</a>
                             </td>
                             <td>
-                                <a href="<?php echo base_url().'index.php/menuitem/delete/'.$menuitem['ID']?>" class="btn btn-danger">Delete</a>
+                                <a href="<?php echo base_url().'index.php/MenuItem/delete/'.$menuitem['ID']?>" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         <?php } } else {?>

@@ -53,7 +53,7 @@ class Customer extends CI_Controller {
 
 		//if ($this->form_validation->run() == false){
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-			$this->load->view('customers\register');
+			$this->load->view('customers/register');
 		} else {		
 
 			$formArray = array();
@@ -80,7 +80,7 @@ class Customer extends CI_Controller {
     function logout() {    
         $user = $this->session->unset_userdata('user');
         session_destroy();
-        redirect( uri: base_url().'index.php/user/login');
+        redirect(base_url().'index.php/user/login');
     }
 
 }

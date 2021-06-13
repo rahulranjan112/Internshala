@@ -26,35 +26,35 @@
                                 <p class="card-text">Please fill with your details</p>
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" class="form-control <?php echo (form_error( field: 'name') != "") ? 'is-invalid' : '';?>" placeholder="">
-                                        <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'name'));?></p>
+                                        <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" class="form-control <?php echo (form_error('name') != "") ? 'is-invalid' : '';?>" placeholder="">
+                                        <p class="invalid-feedback"><?php echo strip_tags(form_error('name'));?></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" name="address" id="address" value="<?php echo set_value('address');?>" class="form-control <?php echo (form_error( field: 'address') != "") ? 'is-invalid' : '';?>" placeholder="">
-                                        <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'address'));?></p>
+                                        <input type="text" name="address" id="address" value="<?php echo set_value('address');?>" class="form-control <?php echo (form_error('address') != "") ? 'is-invalid' : '';?>" placeholder="">
+                                        <p class="invalid-feedback"><?php echo strip_tags(form_error('address'));?></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Mobile No</label>
-                                        <input type="text" name="mobileno" id="mobileno" value="<?php echo set_value('mobileno');?>" class="form-control <?php echo (form_error( field: 'mobileno') != "") ? 'is-invalid' : '';?>" placeholder="">
-                                        <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'mobileno'));?></p>
+                                        <input type="text" name="mobileno" id="mobileno" value="<?php echo set_value('mobileno');?>" class="form-control <?php echo (form_error('mobileno') != "") ? 'is-invalid' : '';?>" placeholder="">
+                                        <p class="invalid-feedback"><?php echo strip_tags(form_error('mobileno'));?></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Preference</label>
                                         <label><input type="radio" name="preference" id="preference" value="0"> Veg</label>
                                         <label><input type="radio" name="preference" id="preference" value="1"> Non-Veg</label>
-                                        <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'preference'));?></p>
+                                        <p class="invalid-feedback"><?php echo strip_tags(form_error('preference'));?></p>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="text" name="email" id="email" value="<?php echo set_value('email');?>" class="form-control <?php echo (form_error( field: 'email') != "") ? 'is-invalid' : '';?>" placeholder="">
-                                        <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'email'));?></p>
+                                        <input type="text" name="email" id="email" value="<?php echo set_value('email');?>" class="form-control <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>" placeholder="">
+                                        <p class="invalid-feedback"><?php echo strip_tags(form_error('email'));?></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" name="password" id="password" value="<?php echo set_value('password');?>" class="form-control <?php echo (form_error( field: 'password') != "") ? 'is-invalid' : '';?>" placeholder="">
-                                        <p class="invalid-feedback"><?php echo strip_tags(form_error( field: 'password'));?></p>
+                                        <input type="password" name="password" id="password" value="<?php echo set_value('password');?>" class="form-control <?php echo (form_error('password') != "") ? 'is-invalid' : '';?>" placeholder="">
+                                        <p class="invalid-feedback"><?php echo strip_tags(form_error('password'));?></p>
                                     </div>
                                     <hr>
                                     <div class="form-group">

@@ -7,7 +7,7 @@ class User extends CI_Controller {
         $users = $this->User_model->getRecords();
         $data = array();
         $data['users'] = $users;
-        $this->load->view('users\list', $data);
+        $this->load->view('users/list', $data);
     }
 
     function __construct()
@@ -28,7 +28,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('password','Password','required');
 
         if ($this->form_validation->run() == false){
-            $this->load->view('users\create');
+            $this->load->view('users/create');
         } else {
             //Save record to database
 
@@ -60,7 +60,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('password','Password','required');
 		
 		if ($this->form_validation->run() == false){			
-			$this->load->view('users\login');
+			$this->load->view('users/login');
 		} else {
 			//Save record to database
 			$email = $this->input->post('email');			
@@ -83,11 +83,11 @@ class User extends CI_Controller {
 					if($user['IsCustomer']==true){
 						$sessArr['Name'] =  $this->Customer_model->get_data_by_id($user['ID'])['Name'];
 						$this->session->set_userdata('user', $sessArr);
-						redirect( uri: base_url().'index.php/customer/index');
+						redirect(base_url().'index.php/customer/index');
 					} else {
 						$sessArr['Name'] =  $this->Restaurant_model->get_data_by_id($user['ID'])['Name'];					
 						$this->session->set_userdata('user', $sessArr);
-						redirect( uri: base_url().'index.php/restaurant/index');
+						redirect(base_url().'index.php/restaurant/index');
 					}				
 				} else {
 					//$value = "Password:" . $password . " DB Entry: " . $user['Password'];

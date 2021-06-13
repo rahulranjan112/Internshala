@@ -24,7 +24,7 @@ class MenuItem extends CI_Controller {
         $this->form_validation->set_rules('password','Password','required');
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $this->load->view('menuitems\create');
+            $this->load->view('menuitems/create');
         } else {
             //Save record to database
 			$user = $this->session->userdata('user');
@@ -55,7 +55,7 @@ class MenuItem extends CI_Controller {
         $this->form_validation->set_rules('password','Password','required');
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {      
-            $this->load->view('menuitems\edit', $data);
+            $this->load->view('menuitems/edit', $data);
         } else {
             //Update record to database
             $formArray = array();
